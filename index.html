@@ -1,261 +1,261 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Manas Goel | Bio/Phys Terminal</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "primary": "#e1fdff",
-                      "tertiary-fixed-dim": "#c3c6cf",
-                      "on-secondary": "#203600",
-                      "on-tertiary": "#2d3137",
-                      "secondary-fixed-dim": "#8fdb00",
-                      "on-primary": "#00363a",
-                      "tertiary-container": "#d8dbe4",
-                      "primary-container": "#00f2ff",
-                      "surface-container-lowest": "#0b0f10",
-                      "on-error": "#690005",
-                      "secondary": "#bcff5f",
-                      "error": "#ffb4ab",
-                      "background": "#101415",
-                      "on-tertiary-fixed-variant": "#43474e",
-                      "inverse-primary": "#00696f",
-                      "inverse-on-surface": "#2d3133",
-                      "surface-variant": "#323537",
-                      "on-secondary-container": "#3d6200",
-                      "secondary-fixed": "#a8f928",
-                      "tertiary-fixed": "#dfe2eb",
-                      "surface-container-low": "#191c1e",
-                      "outline-variant": "#3a494b",
-                      "surface-dim": "#101415",
-                      "primary-fixed": "#74f5ff",
-                      "on-secondary-fixed-variant": "#314f00",
-                      "secondary-container": "#95e400",
-                      "on-primary-fixed-variant": "#004f54",
-                      "surface-tint": "#00dbe7",
-                      "surface-bright": "#363a3b",
-                      "on-primary-fixed": "#002022",
-                      "on-primary-container": "#006a71",
-                      "surface-container": "#1d2022",
-                      "primary-fixed-dim": "#00dbe7",
-                      "surface-container-high": "#272a2c",
-                      "on-tertiary-container": "#5c6067",
-                      "on-tertiary-fixed": "#181c22",
-                      "error-container": "#93000a",
-                      "on-error-container": "#ffdad6",
-                      "on-secondary-fixed": "#112000",
-                      "on-surface-variant": "#b9cacb",
-                      "inverse-surface": "#e0e3e5",
-                      "on-surface": "#e0e3e5",
-                      "on-background": "#e0e3e5",
-                      "surface-container-highest": "#323537",
-                      "tertiary": "#f6f7ff",
-                      "outline": "#849495",
-                      "surface": "#101415"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "unit": "4px",
-                      "container-max": "1440px",
-                      "margin-mobile": "20px",
-                      "margin-desktop": "80px",
-                      "gutter": "24px"
-              },
-              "fontFamily": {
-                      "body-md": ["Inter"],
-                      "display-lg": ["Space Grotesk"],
-                      "headline-sm": ["Space Grotesk"],
-                      "headline-md": ["Space Grotesk"],
-                      "display-lg-mobile": ["Space Grotesk"],
-                      "metadata": ["JetBrains Mono"],
-                      "body-lg": ["Inter"],
-                      "code-label": ["JetBrains Mono"]
-              }
-            }
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manas Goel | Bio_Phys</title>
+    
+    <!-- Clean, tech-focused fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Variables and Clean Reset */
+        :root {
+            --bg-color: #0b1416;
+            --text-main: #e0e6ed;
+            --text-muted: #8b9ea8;
+            --accent-cyan: #00f2ff;
+            --accent-green: #adff2f;
+            --panel-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.1);
         }
-      </script>
-<style>
-        body { background-color: #0A0E14; color: #e0e3e5; margin: 0; overflow-x: hidden; }
-        .glass-panel { background-color: rgba(255, 255, 255, 0.04); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .grid-pattern { background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 24px 24px; }
-        .btn-ghost-technic { border: 1px solid #e1fdff; color: #e1fdff; background: transparent; transition: all 0.3s ease; position: relative; overflow: hidden; }
-        .btn-ghost-technic:hover { background-color: rgba(0, 242, 255, 0.1); box-shadow: 0 0 15px rgba(0, 242, 255, 0.3); }
-        @keyframes pulseGlow { 0% { box-shadow: 0 0 5px rgba(0, 242, 255, 0.1); } 50% { box-shadow: 0 0 20px rgba(0, 242, 255, 0.4); } 100% { box-shadow: 0 0 5px rgba(0, 242, 255, 0.1); } }
-        .animate-pulse-glow { animation: pulseGlow 3s infinite; }
-        .circuit-line-h { height: 1px; background-color: rgba(255, 255, 255, 0.1); width: 100%; }
-        .circuit-line-v { width: 1px; background-color: rgba(255, 255, 255, 0.1); height: 100%; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            /* Subtle blueprint grid background */
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(11, 20, 22, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-brand { font-family: 'JetBrains Mono', monospace; font-weight: bold; font-size: 1.1rem; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; margin: 0 15px; font-size: 0.9rem; text-transform: uppercase; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-cyan); }
+        
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: white;
+            padding: 10px 20px;
+            font-family: 'JetBrains Mono', monospace;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .btn-outline:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); background: rgba(0, 242, 255, 0.05); }
+
+        /* Main Layout Grid */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            align-items: center;
+        }
+
+        /* Left Column Styles */
+        .status-badge {
+            display: inline-block;
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-green);
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+            background: var(--panel-bg);
+        }
+
+        .hero-section {
+            border-left: 2px solid var(--border-color);
+            padding-left: 20px;
+            position: relative;
+        }
+        .hero-section::before {
+            content: ''; position: absolute; left: -5px; top: 0;
+            width: 8px; height: 8px; background: white; border-radius: 50%;
+        }
+
+        h1 { font-size: 1.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .bio-text { color: var(--text-muted); margin-bottom: 40px; max-width: 90%; font-size: 1rem; }
+
+        /* Terminal Window */
+        .terminal {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            margin-top: 40px;
+            color: var(--text-muted);
+        }
+        .term-prompt { color: var(--accent-green); }
+
+        /* Right Column (3D Canvas) */
+        .canvas-container {
+            width: 100%;
+            height: 500px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        .canvas-id {
+            position: absolute; top: 10px; right: 15px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted); font-size: 0.8rem; z-index: 10;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; margin-top: 30px; }
+            .nav-links { display: none; }
+            nav { padding: 15px 20px; }
+        }
     </style>
 </head>
-<body class="font-body-md text-body-md antialiased min-h-screen flex flex-col relative selection:bg-primary-container selection:text-on-primary-container">
-<!-- Global Grid Overlay -->
-<div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full bg-white/4 backdrop-blur-md border-b border-white/10 flex justify-between items-center px-margin-desktop py-4 z-50">
-<div class="flex items-center gap-4">
-<span class="font-display-lg text-headline-sm tracking-tighter text-primary">MANAS_GOEL // BIO_PHYS</span>
-</div>
-<div class="hidden md:flex items-center gap-8">
-<a class="font-code-label text-code-label uppercase text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 transition-all duration-300 cursor-pointer active:scale-95 px-2 py-1 rounded-DEFAULT" href="#">RESEARCH</a>
-<a class="font-code-label text-code-label uppercase text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 transition-all duration-300 cursor-pointer active:scale-95 px-2 py-1 rounded-DEFAULT" href="#">PROJECTS</a>
-<a class="font-code-label text-code-label uppercase text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 transition-all duration-300 cursor-pointer active:scale-95 px-2 py-1 rounded-DEFAULT" href="#">TIMELINE</a>
-</div>
-<div>
-<a href="CV.pdf" download class="font-code-label text-code-label uppercase text-primary border border-primary px-4 py-2 hover:bg-primary/10 transition-all duration-300 cursor-pointer active:scale-95 rounded-DEFAULT btn-ghost-technic inline-block">
-                DOWNLOAD_CV
-             </a>
-</div>
-</nav>
+<body>
 
-<main class="flex-grow relative z-10 w-full max-w-container-max mx-auto">
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-[80px]"> 
-<!-- Shader Background -->
-<div class="absolute inset-0 z-0">
-<div class="absolute inset-0 w-full h-full opacity-60" style="display:block;">
-<canvas id="shader-canvas-ANIMATION_2" style="display:block;width:100%;height:100%"></canvas>
-<script>
-(function() {
-  const canvas = document.getElementById('shader-canvas-ANIMATION_2');
-  function syncSize() {
-    const w = canvas.clientWidth  || 1280;
-    const h = canvas.clientHeight || 720;
-    if (canvas.width !== w || canvas.height !== h) {
-      canvas.width  = w;
-      canvas.height = h;
-    }
-  }
-  if (typeof ResizeObserver !== 'undefined') { new ResizeObserver(syncSize).observe(canvas); }
-  syncSize();
-  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-  if (!gl) return;
-  const vs = `attribute vec2 a_position; varying vec2 v_texCoord; void main() { v_texCoord = a_position * 0.5 + 0.5; gl_Position = vec4(a_position, 0.0, 1.0); }`;
-  const fs = `precision highp float; uniform float u_time; uniform vec2 u_resolution; uniform vec2 u_mouse; varying vec2 v_texCoord;
-float hash(vec2 p) { return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
-float noise(vec2 p) { vec2 i = floor(p); vec2 f = fract(p); float a = hash(i); float b = hash(i + vec2(1.0, 0.0)); float c = hash(i + vec2(0.0, 1.0)); float d = hash(i + vec2(1.0, 1.0)); vec2 u = f * f * (3.0 - 2.0 * f); return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y; }
-void main() { vec2 uv = v_texCoord; vec2 mouse = u_mouse / u_resolution; vec3 color1 = vec3(0.039, 0.055, 0.078); vec3 color2 = vec3(0.0, 0.949, 1.0); float n = noise(uv * 3.0 + u_time * 0.2); n += noise(uv * 6.0 - u_time * 0.1) * 0.5; float dist = distance(uv, mouse); float glow = 0.05 / (dist + 0.1); vec3 finalColor = mix(color1, color2 * 0.3, n); finalColor += color2 * glow * (0.5 + 0.5 * sin(u_time)); gl_FragColor = vec4(finalColor, 1.0); }`;
-  function cs(type, src) { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
-  const prog = gl.createProgram(); gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs)); gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(prog); gl.useProgram(prog);
-  const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
-  const pos = gl.getAttribLocation(prog, 'a_position'); gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
-  const uTime = gl.getUniformLocation(prog, 'u_time'); const uRes = gl.getUniformLocation(prog, 'u_resolution'); const uMouse = gl.getUniformLocation(prog, 'u_mouse');
-  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
-  window.addEventListener('mousemove', (event) => { const rect = canvas.getBoundingClientRect(); if (rect.width && rect.height) { const nx = (event.clientX - rect.left) / rect.width; const ny = 1.0 - (event.clientY - rect.top) / rect.height; mouse.x = nx * canvas.width; mouse.y = ny * canvas.height; } });
-  function render(t) { if (typeof ResizeObserver === 'undefined') syncSize(); gl.viewport(0, 0, canvas.width, canvas.height); if (uTime) gl.uniform1f(uTime, t * 0.001); if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height); if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); requestAnimationFrame(render); }
-  render(0);
-})();
-</script>
-</div>
-</div>
-<!-- Radial Gradient Overlay -->
-<div class="absolute inset-0 bg-radial-gradient from-transparent to-background/90 z-0"></div>
-<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center h-full">
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-brand">MANAS_GOEL//BIO_PHYS</div>
+        <div class="nav-links">
+            <a href="#">Research</a>
+            <a href="#">Projects</a>
+            <a href="#">Timeline</a>
+        </div>
+        <a href="CV.pdf" download class="btn-outline">Download_CV</a>
+    </nav>
 
-<!-- Hero Text & Content -->
-<div class="col-span-1 md:col-span-7 flex flex-col items-start gap-8 mt-20 md:mt-0">
-<div class="inline-flex items-center gap-2 glass-panel px-4 py-1.5 rounded-full border border-primary/30">
-<span class="w-2 h-2 rounded-full bg-secondary animate-pulse-glow"></span>
-<span class="font-code-label text-code-label uppercase text-secondary">STUDENT_STATUS: CLASS 12 (2026-27)</span>
-</div>
-<div class="space-y-4 relative">
-<div class="absolute -left-6 top-2 h-[80%] circuit-line-v hidden md:block">
-<div class="w-2 h-2 bg-primary rounded-full absolute top-0 -left-[3px]"></div>
-</div>
-<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter">
-                            MANAS GOEL
-                        </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl border-l border-white/20 pl-4 py-2">
-                            My academic journey is driven by a desire to realize the intersection of biological potential and technological innovation. Dedicated to solving societal problems via technology. Gold Medallist at International Junior Science Olympiad (IJSO).
-                        </p>
-</div>
-<div class="flex flex-col sm:flex-row gap-4 mt-8">
-<a href="CV.pdf" download class="btn-ghost-technic font-code-label text-code-label uppercase px-8 py-4 flex items-center justify-center gap-2 rounded-sm group">
-                            > INITIATE_DOWNLOAD_CV
-                            <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-</div>
-<!-- Terminal Data readout simulation -->
-<div class="mt-12 glass-panel p-4 rounded-sm border-l-2 border-l-primary/50 w-full max-w-md">
-<div class="font-metadata text-metadata text-outline-variant space-y-1">
-<div><span class="text-secondary/70">root@manas-goel:~#</span> init_sequence --load-skills</div>
-<div>[ OK ] Loaded module: Python_Computational_Neuroscience v1.0</div>
-<div>[ OK ] Loaded module: Arduino_Microcontroller_ISAAP v2.4</div>
-<div class="text-primary/70 animate-pulse">> Awaiting command input..._</div>
-</div>
-</div>
-</div>
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Left Column: Text & Info -->
+        <div>
+            <div class="status-badge">
+                ● STUDENT_STATUS: CLASS 12 (2026-27)
+            </div>
+            
+            <div class="hero-section">
+                <h1>Manas Goel</h1>
+                <p class="bio-text">
+                    My academic journey is driven by a desire to realize the intersection of biological potential and technological innovation. Dedicated to solving societal problems via technology. Gold Medallist at International Junior Science Olympiad (IJSO).
+                </p>
+                <a href="CV.pdf" download class="btn-outline" style="border-color: var(--accent-cyan);">> INITIATE_DOWNLOAD_CV &rarr;</a>
+            </div>
 
-<!-- 3D Scene Container -->
-<div class="col-span-1 md:col-span-5 h-[60vh] md:h-[80vh] relative mt-12 md:mt-0">
-<div class="absolute inset-0 border border-white/10 rounded-sm glass-panel p-2">
-<div class="absolute top-0 right-0 p-2 font-metadata text-metadata text-primary/50">ID: MDL-8924</div>
-<div class="absolute bottom-0 left-0 p-2 font-metadata text-metadata text-secondary/50">SEC: ALPHA</div>
-<div class="w-full h-full relative overflow-hidden rounded-sm bg-background/50">
-<!-- Three.js helix -->
-<div class="absolute inset-0 w-full h-full object-cover" style="display:block;">
-<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
-<div id="threejs-container-ANIMATION_3" style="width:100%;height:100%"></div>
-<script>
-(function() {
-  const container = document.getElementById('threejs-container-ANIMATION_3');
-  const width = container.clientWidth || window.innerWidth;
-  const height = container.clientHeight || window.innerHeight;
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-  renderer.setSize(width, height);
-  renderer.setPixelRatio(window.devicePixelRatio || 1);
-  container.appendChild(renderer.domElement);
-  const group = new THREE.Group();
-  scene.add(group);
-  const sphereGeom = new THREE.SphereGeometry(0.1, 16, 16);
-  const mat1 = new THREE.MeshPhongMaterial({ color: 0x00F2FF, emissive: 0x00F2FF, emissiveIntensity: 0.5 });
-  const mat2 = new THREE.MeshPhongMaterial({ color: 0xADFF2F, emissive: 0xADFF2F, emissiveIntensity: 0.5 });
-  const points = 30; const helixRadius = 1.5; const heightStep = 0.3;
-  for(let i = 0; i < points; i++) {
-    const angle = i * 0.5; const y = (i - points / 2) * heightStep;
-    const s1 = new THREE.Mesh(sphereGeom, mat1); s1.position.set(Math.cos(angle) * helixRadius, y, Math.sin(angle) * helixRadius); group.add(s1);
-    const s2 = new THREE.Mesh(sphereGeom, mat2); s2.position.set(Math.cos(angle + Math.PI) * helixRadius, y, Math.sin(angle + Math.PI) * helixRadius); group.add(s2);
-    const lineGeom = new THREE.BufferGeometry().setFromPoints([s1.position, s2.position]);
-    const lineMat = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.2 });
-    const line = new THREE.Line(lineGeom, lineMat); group.add(line);
-  }
-  const light = new THREE.PointLight(0xffffff, 1, 100); light.position.set(10, 10, 10); scene.add(light); scene.add(new THREE.AmbientLight(0x404040));
-  camera.position.z = 8;
-  const animate = () => { requestAnimationFrame(animate); group.rotation.y += 0.01; group.rotation.x += 0.005; renderer.render(scene, camera); };
-  window.addEventListener('resize', () => { const w = container.clientWidth; const h = container.clientHeight; camera.aspect = w / h; camera.updateProjectionMatrix(); renderer.setSize(w, h); });
-  animate();
-})();
-</script>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full bg-surface border-t border-white/10 flex flex-col md:flex-row justify-between items-center px-margin-desktop py-12 relative z-20">
-<div class="mb-6 md:mb-0">
-<span class="font-metadata text-metadata text-secondary">© 2026 MANAS_GOEL_TERMINAL // +91-7206150310</span>
-</div>
-<div class="flex flex-wrap justify-center gap-6 md:gap-8">
-<a class="font-code-label text-code-label text-on-surface-variant hover:text-secondary transition-opacity duration-200" href="mailto:manasgoel2009@gmail.com">EMAIL_NODE</a>
-<a class="font-code-label text-code-label text-on-surface-variant hover:text-secondary transition-opacity duration-200" href="#">LINKEDIN_SYS</a>
-</div>
-</footer>
-</body></html>
+            <div class="terminal">
+                <div><span class="term-prompt">root@manas-goel:~#</span> init_sequence --load-skills</div>
+                <div style="margin-top: 10px;">[ OK ] Loaded module: Computational_Neuroscience v1.0</div>
+                <div>[ OK ] Loaded module: Arduino_Microcontroller_ISAAP</div>
+                <div style="margin-top: 10px; color: var(--accent-cyan); animation: blink 1s infinite;">> Awaiting command input..._</div>
+            </div>
+        </div>
+
+        <!-- Right Column: 3D Helix -->
+        <div class="canvas-container" id="helix-container">
+            <div class="canvas-id">ID: MDL-8924</div>
+        </div>
+
+    </div>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Helix Animation Script -->
+    <script>
+        const container = document.getElementById('helix-container');
+        const scene = new THREE.Scene();
+        
+        // Setup Camera & Renderer
+        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        container.appendChild(renderer.domElement);
+
+        // Group to hold the DNA strands
+        const dnaGroup = new THREE.Group();
+        scene.add(dnaGroup);
+
+        // Materials matching your screenshot colors
+        const geometry = new THREE.SphereGeometry(0.15, 16, 16);
+        const matCyan = new THREE.MeshBasicMaterial({ color: 0x00f2ff });
+        const matGreen = new THREE.MeshBasicMaterial({ color: 0xadff2f });
+        const lineMat = new THREE.LineBasicMaterial({ color: 0x334455, transparent: true, opacity: 0.5 });
+
+        // Build the Helix
+        const numNodes = 25;
+        const radius = 2;
+        const heightStep = 0.4;
+
+        for(let i = 0; i < numNodes; i++) {
+            let angle = i * 0.5;
+            let yPos = (i - (numNodes/2)) * heightStep;
+
+            // Strand 1 (Cyan)
+            let x1 = Math.cos(angle) * radius;
+            let z1 = Math.sin(angle) * radius;
+            let node1 = new THREE.Mesh(geometry, matCyan);
+            node1.position.set(x1, yPos, z1);
+            dnaGroup.add(node1);
+
+            // Strand 2 (Green)
+            let x2 = Math.cos(angle + Math.PI) * radius;
+            let z2 = Math.sin(angle + Math.PI) * radius;
+            let node2 = new THREE.Mesh(geometry, matGreen);
+            node2.position.set(x2, yPos, z2);
+            dnaGroup.add(node2);
+
+            // Connecting Lines
+            const points = [new THREE.Vector3(x1, yPos, z1), new THREE.Vector3(x2, yPos, z2)];
+            const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
+            const line = new THREE.Line(lineGeo, lineMat);
+            dnaGroup.add(line);
+        }
+
+        // Position Camera
+        camera.position.z = 12;
+        camera.position.y = 0;
+
+        // Animation Loop
+        function animate() {
+            requestAnimationFrame(animate);
+            dnaGroup.rotation.y += 0.005; // Slow rotation
+            dnaGroup.rotation.x = 0.2;    // Slight tilt
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle Window Resize
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+    </script>
+</body>
+</html>
