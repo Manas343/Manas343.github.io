@@ -47,11 +47,25 @@
         .nav-links a:hover { color: var(--accent-color); }
 
         /* Hero Layout */
+        /* Hero Layout with Subtle Pattern */
         .hero {
             display: flex;
             align-items: center;
             gap: 50px;
             margin-bottom: 80px;
+            
+            /* --- NEW BACKGROUND DESIGN --- */
+            padding: 50px;
+            border-radius: 24px;
+            background-color: #fafafc; /* Very faint off-white base */
+            
+            /* Creates the subtle dot grid pattern */
+            background-image: radial-gradient(var(--border-light) 2px, transparent 2px);
+            background-size: 25px 25px; /* Adjust this to make dots closer or further apart */
+            
+            /* Adds a soft shadow to lift it off the page */
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-light);
         }
         
         .hero-img {
