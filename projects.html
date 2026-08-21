@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Manas Goel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-white: #ffffff; --text-dark: #111827; --text-gray: #4b5563; --border-light: #e5e7eb; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-white); color: var(--text-dark); line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        nav { display: flex; justify-content: space-between; padding: 30px 0; border-bottom: 1px solid var(--border-light); margin-bottom: 40px; }
+        .nav-logo { font-weight: 700; font-size: 1.2rem; color: var(--text-dark); text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-gray); font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--text-dark); }
+        
+        .page-header {
+            padding: 50px; border-radius: 24px; background-color: #fafafc;
+            background-image: radial-gradient(var(--border-light) 2px, transparent 2px);
+            background-size: 25px 25px; box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-light); margin-bottom: 50px; text-align: center;
+        }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { border: 1px solid var(--border-light); border-radius: 12px; padding: 25px; background: var(--bg-white); }
+        .card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .card p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 15px; }
+        .tag { display: inline-block; padding: 4px 10px; background: #f3f4f6; border-radius: 15px; font-size: 0.8rem; margin-right: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="nav-logo">Manas Goel</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="academics.html">Academics</a>
+                <a href="extracurricular.html">Extracurriculars</a>
+            </div>
+        </nav>
+
+        <div class="page-header">
+            <h1>Projects & Courses</h1>
+            <p style="color: var(--text-gray);">Engineering, AI, and Software Development</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Seed Sowing Robot (ISAAP)</h3>
+                <p>Integrated system of automation in agricultural practices. Features a seed-sowing robot, bird monitoring machine, and a mobile app. Showcased at the CBSE National Science Exhibition.</p>
+                <div><span class="tag">Arduino</span><span class="tag">App Inventor</span><span class="tag">Hardware</span></div>
+            </div>
+
+            <div class="card">
+                <h3>fMRI Analysis of Cognitive Distraction</h3>
+                <p>Computational Neuroscience course via University of Washington. Analyzing social vs. non-social modalities.</p>
+                <div><span class="tag">Python</span><span class="tag">Numpy</span><span class="tag">Statistical Methods</span></div>
+            </div>
+
+            <div class="card">
+                <h3>Oculomotor EEG Analysis</h3>
+                <p>A comparative analysis of Alpha and Beta Waves between genders, utilizing MNE, FFT, and Frequency Heat Maps.</p>
+                <div><span class="tag">EEG Epoching</span><span class="tag">Python</span></div>
+            </div>
+
+            <div class="card">
+                <h3>Mobile App Development</h3>
+                <p>Developed Sudoku 4x4 mobile game and "Covid clear" application using MIT App Inventor. Awarded App Inventor of the Month (May 2020).</p>
+                <div><span class="tag">MIT App Inventor</span><span class="tag">Software</span></div>
+            </div>
+        </div>
+
+        <footer style="text-align: center; padding: 40px 0; color: var(--text-gray); border-top: 1px solid var(--border-light); margin-top: 50px;">
+            <p>&copy; 2026 Manas Goel.</p>
+        </footer>
+    </div>
+</body>
+</html>
