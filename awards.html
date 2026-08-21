@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards & Honors | Manas Goel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg-white: #ffffff; 
+            --text-dark: #111827; 
+            --text-gray: #4b5563; 
+            --border-light: #e5e7eb;
+            --accent-color: #4f46e5; /* Indigo Blue */
+            --accent-light: #e0e7ff;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-white); color: var(--text-dark); line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 1px solid var(--border-light); margin-bottom: 40px; }
+        .nav-logo { font-weight: 700; font-size: 1.2rem; color: var(--text-dark); text-decoration: none; letter-spacing: -0.5px; }
+        .nav-logo span { color: var(--accent-color); }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-gray); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent-color); }
+        
+        /* Dotted Page Header */
+        .page-header {
+            padding: 50px; border-radius: 24px; background-color: #fafafc;
+            background-image: radial-gradient(var(--border-light) 2px, transparent 2px);
+            background-size: 25px 25px; box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-light); margin-bottom: 50px; text-align: center;
+        }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; letter-spacing: -1px; }
+        
+        /* Section Headings */
+        section { margin-bottom: 60px; }
+        h2.section-title {
+            font-size: 1.5rem; margin-bottom: 20px; color: var(--text-dark);
+            display: inline-block; border-bottom: 3px solid var(--accent-color); padding-bottom: 8px;
+        }
+
+        /* List Items */
+        .list-item {
+            padding: 20px 0; border-bottom: 1px solid var(--border-light);
+            display: flex; justify-content: space-between; align-items: flex-start;
+        }
+        .list-item:last-child { border-bottom: none; }
+        .list-item-left h4 { font-size: 1.15rem; margin-bottom: 5px; color: var(--text-dark); }
+        .list-item-left p { color: var(--text-gray); font-size: 0.95rem; }
+        .list-year { 
+            font-weight: 700; font-size: 1rem; color: var(--accent-color); 
+            background: var(--accent-light); padding: 4px 12px; border-radius: 4px;
+            white-space: nowrap; margin-left: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .list-item { flex-direction: column; gap: 10px; }
+            .list-year { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <a href="index.html" class="nav-logo">Manas <span>Goel</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="academics.html">Academics</a>
+                <a href="projects.html">Projects</a>
+                <a href="extracurricular.html">Extracurriculars</a>
+            </div>
+        </nav>
+
+        <div class="page-header">
+            <h1>Awards & Honors</h1>
+            <p style="color: var(--text-gray);">Olympiads, Competitions, and Recognitions</p>
+        </div>
+
+        <section>
+            <h2 class="section-title">International Olympiads</h2>
+            
+            <div class="list-item">
+                <div class="list-item-left">
+                    <h4>Asian Physics Olympiad (APhO)</h4>
+                    <p>Awarded Bronze Medal at the competition held in Busan, Republic of Korea[cite: 1, 2].</p>
+                </div>
+                <div class="list-year">2026</div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-left">
+                    <h4>International Junior Science Olympiad (IJSO)</h4>
+                    <p>Secured Gold Medal at Romania. Achieved World Rank 4 along with the 2nd Best Result Award in Physics[cite: 1, 2].</p>
+                </div>
+                <div class="list-year">2024</div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-left">
+                    <h4>US Medicine and Disease Olympiad (USMDO)</h4>
+                    <p>Won Gold Medal and qualified to appear for the International Medicine and Disease Olympiad (IMDO)[cite: 2].</p>
+                </div>
+                <div class="list-year">2026</div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">National Excellence</h2>
+            
+            <div class="list-item">
+                <div class="list-item-left">
+                    <h4>Indian National Olympiads (OCSC Camp)</h4>
+                    <p>Earned Gold Medal of Excellence at both the Indian National Physics Olympiad (2026) and Biology Olympiad (2025) held at HBCSE TIFR[cite: 1, 2].</p>
+                </div>
+                <div class="list-year">2025-26</div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-left">
+                    <h4>National Standards Examination (NSE)</h4>
+                    <p>Awarded National Top 1% Merit in Astronomy, Physics, Chemistry, and Biology by the Indian Association of Physics Teachers[cite: 1, 2].</p>
+                </div>
+                <div class="list-year">2025-26</div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-left">
+                    <h4>RSI-India Selection</h4>
+                    <p>Selected for the prestigious RSI-India camp by IISC Bengaluru (opted out on medical grounds)[cite: 2].</p>
+                </div>
+                <div class="list-year">2026</div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-left">
+                    <h4>Young Scientist Talent Test</h4>
+                    <p>Achieved All India Rank 1 in the competition organized by Sri Chaitanya & Uni-global Technologies Inc. USA[cite: 1, 2].</p>
+                </div>
+                <div class="list-year">2023</div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Science & Innovation</h2>
+            
+            <div class="list-item">
+                <div class="list-item-left">
+                    <h4>CBSE Regional Science Exhibition</h4>
+                    <p>Secured Team Rank 1 at St. Soldiers School, Panchkula for the Seed Sowing Robot (ISAAP) and was selected for Nationals[cite: 1, 2].</p>
+                </div>
+                <div class="list-year">2024</div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-left">
+                    <h4>Haryana State Council for Science & Innovation</h4>
+                    <p>Awarded a prize of Rs. 2.5 Lac by DST Haryana for exceptional Olympiad performance[cite: 1, 2].</p>
+                </div>
+                <div class="list-year">2024</div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-left">
+                    <h4>Working Model Competition</h4>
+                    <p>Achieved Rank 1 in the competition held at Central University Haryana Mahendergarh by DST Haryana[cite: 1, 2].</p>
+                </div>
+                <div class="list-year">2024</div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-left">
+                    <h4>MIT App Inventor of the Month</h4>
+                    <p>Recognized globally by MIT App Inventor for developing the "Covidclear" mobile application[cite: 1].</p>
+                </div>
+                <div class="list-year">2020</div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; padding: 40px 0; color: var(--text-gray); border-top: 1px solid var(--border-light); margin-top: 50px;">
+            <p>&copy; 2026 Manas Goel.</p>
+        </footer>
+    </div>
+</body>
+</html>
