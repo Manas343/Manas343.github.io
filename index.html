@@ -6,13 +6,11 @@
     <title>Manas Goel | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Theme: White base, Black text, One Accent Color */
         :root {
             --bg-white: #ffffff;
             --text-dark: #111827;
             --text-gray: #4b5563;
             --border-light: #e5e7eb;
-            /* YOUR ACCENT COLOR: Change this hex code to change the color of the whole site */
             --accent-color: #4f46e5; /* Indigo Blue */
             --accent-light: #e0e7ff;
         }
@@ -26,13 +24,9 @@
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
-        /* Navigation */
+        /* Unified Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -43,27 +37,21 @@
         }
         .nav-logo { font-weight: 700; font-size: 1.2rem; color: var(--text-dark); text-decoration: none; letter-spacing: -0.5px; }
         .nav-logo span { color: var(--accent-color); }
-        .nav-links a { margin-left: 25px; text-decoration: none; color: var(--text-gray); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-gray); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover { color: var(--accent-color); }
+        .nav-links a.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 4px; }
 
-        /* Hero Layout */
         /* Hero Layout with Subtle Pattern */
         .hero {
             display: flex;
             align-items: center;
             gap: 50px;
             margin-bottom: 80px;
-            
-            /* --- NEW BACKGROUND DESIGN --- */
             padding: 50px;
             border-radius: 24px;
-            background-color: #fafafc; /* Very faint off-white base */
-            
-            /* Creates the subtle dot grid pattern */
+            background-color: #fafafc; 
             background-image: radial-gradient(var(--border-light) 2px, transparent 2px);
-            background-size: 25px 25px; /* Adjust this to make dots closer or further apart */
-            
-            /* Adds a soft shadow to lift it off the page */
+            background-size: 25px 25px; 
             box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
             border: 1px solid var(--border-light);
         }
@@ -74,6 +62,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--accent-light);
+            background-color: var(--border-light);
         }
 
         .hero-content h1 { font-size: 3rem; font-weight: 700; margin-bottom: 5px; letter-spacing: -1px; }
@@ -92,7 +81,7 @@
         }
         .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        /* Sections */
+        /* Highlights Section */
         section { margin-bottom: 80px; }
         h3.section-title {
             font-size: 1.5rem;
@@ -103,104 +92,45 @@
             padding-bottom: 8px;
         }
 
-        /* Project Cards */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
+        /* Highlight Cards */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card {
-            background: var(--bg-white);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            background: var(--bg-white); border: 1px solid var(--border-light); border-radius: 8px;
+            overflow: hidden; padding: 25px; transition: border-color 0.2s, box-shadow 0.2s;
         }
-        
-        .card:hover { 
-            border-color: var(--accent-color); 
-            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1); 
-        }
-        
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--border-light);
-            background-color: #f3f4f6;
-        }
-        
-        .card-content { padding: 25px; }
-        .card-content h4 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-dark); }
-        .card-content p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px; }
-        
-        .tag {
-            display: inline-block;
-            background-color: var(--accent-light);
-            color: var(--accent-color);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            margin-right: 5px;
-            margin-bottom: 5px;
-        }
-
-        /* Awards Lists */
-        .list-item {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-light);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        .list-item:last-child { border-bottom: none; }
-        .list-item-left h4 { font-size: 1.1rem; margin-bottom: 5px; }
-        .list-item-left p { color: var(--text-gray); font-size: 0.95rem; }
-        .list-year { 
-            font-weight: 700; 
-            font-size: 1rem; 
-            color: var(--accent-color); 
-            background: var(--accent-light);
-            padding: 4px 12px;
-            border-radius: 4px;
-        }
+        .card:hover { border-color: var(--accent-color); box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1); }
+        .card h4 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-dark); }
+        .card p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px; }
+        .card-link { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .card-link:hover { text-decoration: underline; }
 
         /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: var(--text-gray);
-            border-top: 1px solid var(--border-light);
-            font-size: 0.9rem;
-        }
+        footer { text-align: center; padding: 40px 0; color: var(--text-gray); border-top: 1px solid var(--border-light); font-size: 0.9rem; }
 
-        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; gap: 30px; }
+            .hero { flex-direction: column; text-align: center; gap: 30px; padding: 30px 20px; }
             .nav-links { display: none; }
-            .list-item { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Navigation -->
+        <!-- THE NEW UNIVERSAL NAVIGATION BAR -->
         <nav>
-            <a href="#" class="nav-logo">Manas <span>Goel</span></a>
+            <a href="index.html" class="nav-logo">Manas <span>Goel</span></a>
             <div class="nav-links">
-                <a href="#projects">Projects</a>
-                <a href="#awards">Awards</a>
-                <a href="#extracurriculars">Extracurriculars</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="academics.html">Academics</a>
+                <a href="projects.html">Projects</a>
+                <a href="awards.html">Awards</a>
+                <a href="extracurricular.html">Extracurriculars</a>
             </div>
         </nav>
 
         <!-- Profile Section -->
         <section class="hero">
-            <!-- Replace 'profile.jpg' with your actual image file name once uploaded to GitHub -->
+            <!-- Remember to upload your image to GitHub and replace 'profile.jpg' here -->
             <img src="profile.jpg" alt="Manas Goel" class="hero-img">
             
             <div class="hero-content">
@@ -212,86 +142,27 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <h3 class="section-title">Research & Projects</h3>
+        <!-- Portfolio Highlights -->
+        <section id="highlights">
+            <h3 class="section-title">Portfolio Highlights</h3>
             <div class="card-grid">
                 
                 <div class="card">
-                    <!-- Replace 'robot.jpg' with your actual project image -->
-                    <img src="robot.jpg" alt="ISAAP Project">
-                    <div class="card-content">
-                        <h4>Seed Sowing Robot (ISAAP)</h4>
-                        <p>Developed an integrated system of automation in agricultural practices, featuring a seed-sowing robot and bird monitoring machine. Showcased at the CBSE National Science Exhibition.</p>
-                        <div>
-                            <span class="tag">Robotics</span>
-                            <span class="tag">Arduino</span>
-                        </div>
-                    </div>
+                    <h4>Research & Projects</h4>
+                    <p>View my work on the ISAAP Seed Sowing Robot, fMRI Cognitive Distraction analysis, and custom mobile applications.</p>
+                    <a href="projects.html" class="card-link">View Projects &rarr;</a>
                 </div>
 
                 <div class="card">
-                    <!-- Replace 'scan.jpg' with your actual project image -->
-                    <img src="scan.jpg" alt="fMRI Analysis">
-                    <div class="card-content">
-                        <h4>fMRI Analysis of Cognitive Distraction</h4>
-                        <p>Researching social vs. non-social modalities using computational neuroscience techniques and statistical methods via University of Washington curriculum.</p>
-                        <div>
-                            <span class="tag">Neuroscience</span>
-                            <span class="tag">Python</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Awards Section -->
-        <section id="awards">
-            <h3 class="section-title">Awards & Recognitions</h3>
-            
-            <div class="list-item">
-                <div class="list-item-left">
-                    <h4>Asian Physics Olympiad</h4>
-                    <p>Bronze medal held at Busan, Republic of Korea.</p>
-                </div>
-                <div class="list-year">2026</div>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-left">
-                    <h4>International Junior Science Olympiad (IJSO)</h4>
-                    <p>Gold Medal at Romania. World Rank 4 along with 2nd Best result award in Physics.</p>
-                </div>
-                <div class="list-year">2024</div>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-left">
-                    <h4>US Medicine & Disease Olympiad</h4>
-                    <p>Gold medal and qualified to appear for IMDO.</p>
-                </div>
-                <div class="list-year">2026</div>
-            </div>
-        </section>
-
-        <!-- Extracurriculars Section -->
-        <section id="extracurriculars">
-            <h3 class="section-title">Extracurriculars</h3>
-            <div class="card-grid">
-                
-                <div class="card">
-                    <div class="card-content">
-                        <h4>Community Service</h4>
-                        <p>Completed 60 hours of voluntary service at Divyang Punarvas and Swastha Kendra, including training in the prosthetics and orthotics lab.</p>
-                    </div>
+                    <h4>Olympiads & Awards</h4>
+                    <p>Details on my Gold Medal at the IJSO Romania, Bronze at the Asian Physics Olympiad, and national recognitions.</p>
+                    <a href="awards.html" class="card-link">View Awards &rarr;</a>
                 </div>
 
                 <div class="card">
-                    <div class="card-content">
-                        <h4>Arts & Leadership</h4>
-                        <p>Playing Violin since 2023. Deputy Head Boy and Secretary of Oratory Club at DPS Hisar, winning Best Speaker at O.P. Jindal Memorial Debate.</p>
-                    </div>
+                    <h4>Beyond the Classroom</h4>
+                    <p>Learn more about my classical violin training, debate achievements, and voluntary work in prosthetics.</p>
+                    <a href="extracurricular.html" class="card-link">View Extracurriculars &rarr;</a>
                 </div>
 
             </div>
