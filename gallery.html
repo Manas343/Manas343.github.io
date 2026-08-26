@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Manas Goel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg-white: #ffffff; 
+            --text-dark: #111827; 
+            --text-gray: #4b5563; 
+            --border-light: #e5e7eb;
+            --accent-color: #4f46e5; /* Indigo Blue */
+            --accent-light: #e0e7ff;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-white); color: var(--text-dark); line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Unified Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 1px solid var(--border-light); margin-bottom: 40px; }
+        .nav-logo { font-weight: 700; font-size: 1.2rem; color: var(--text-dark); text-decoration: none; letter-spacing: -0.5px; }
+        .nav-logo span { color: var(--accent-color); }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-gray); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent-color); }
+        .nav-links a.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 4px; }
+        
+        /* Dotted Page Header */
+        .page-header {
+            padding: 50px; border-radius: 24px; background-color: #fafafc;
+            background-image: radial-gradient(var(--border-light) 2px, transparent 2px);
+            background-size: 25px 25px; box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-light); margin-bottom: 50px; text-align: center;
+        }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; letter-spacing: -1px; }
+
+        /* Gallery Grid Layout */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        .gallery-item {
+            background: #fafafc;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+        .gallery-img-wrapper {
+            height: 220px;
+            overflow: hidden;
+            background-color: #e5e7eb;
+            cursor: pointer;
+        }
+        .gallery-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .gallery-img-wrapper img:hover {
+            transform: scale(1.05);
+        }
+        .gallery-caption {
+            padding: 15px 20px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Modal (Lightbox) Background */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.85); 
+            justify-content: center; 
+            align-items: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            animation: zoomIn 0.3s ease;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .close-modal:hover { color: var(--accent-color); }
+
+        footer { text-align: center; padding: 40px 0; color: var(--text-gray); border-top: 1px solid var(--border-light); margin-top: 50px; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Universal Navigation Bar -->
+        <nav>
+            <a href="index.html" class="nav-logo">Manas <span>Goel</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="academics.html">Academics</a>
+                <a href="projects.html">Projects</a>
+                <a href="awards.html">Awards</a>
+                <a href="extracurricular.html">Extracurriculars</a>
+                <a href="gallery.html" class="active">Photo Gallery</a>
+            </div>
+        </nav>
+
+        <div class="page-header">
+            <h1>Photo Gallery</h1>
+            <p style="color: var(--text-gray);">Snapshots from Science Exhibitions, Competitions, and Activities</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-img-wrapper" onclick="openModal('cbse science exhibition pic 1.jpeg')">
+                    <img src="cbse science exhibition pic 1.jpeg" alt="CBSE Science Exhibition Booth">
+                </div>
+                <div class="gallery-caption">CBSE Science Exhibition Booth</div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-img-wrapper" onclick="openModal('cbse science exhibit pic2.jpeg')">
+                    <img src="cbse science exhibit pic2.jpeg" alt="CBSE Science Exhibition Display">
+                </div>
+                <div class="gallery-caption">CBSE Science Exhibition Display</div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-img-wrapper" onclick="openModal('cbse science exhibit pic 3.jpeg')">
+                    <img src="cbse science exhibit pic 3.jpeg" alt="CBSE Science Exhibition Stage">
+                </div>
+                <div class="gallery-caption">CBSE Science Exhibition Stage</div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-img-wrapper" onclick="openModal('covidclear.jpeg')">
+                    <img src="covidclear.jpeg" alt="Covidclear App Badge">
+                </div>
+                <div class="gallery-caption">MIT App Inventor Recognition (Covidclear)</div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-img-wrapper" onclick="openModal('sudojunior.jpeg')">
+                    <img src="sudojunior.jpeg" alt="SudoJunior App Badge">
+                </div>
+                <div class="gallery-caption">MIT App Inventor Best Design (SudoJunior)</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Manas Goel.</p>
+        </footer>
+    </div>
+
+    <!-- Modal for expanding images -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="expandedImg">
+    </div>
+
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("expandedImg");
+
+        function openModal(src) {
+            modal.style.display = "flex";
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
+```eof
+
+Once you create the file `gallery.html` in your repository and paste this code, the 404 error will disappear and your photo gallery page will work perfectly!
