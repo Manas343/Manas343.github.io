@@ -4,16 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Manas Goel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --bg-white: #ffffff; --text-dark: #111827; --text-gray: #4b5563; --border-light: #e5e7eb; }
+        :root { 
+            --bg-white: #ffffff; 
+            --text-dark: #111827; 
+            --text-gray: #4b5563; 
+            --border-light: #e5e7eb;
+            --accent-color: #4f46e5; /* Indigo Blue */
+            --accent-light: #e0e7ff;
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--bg-white); color: var(--text-dark); line-height: 1.6; }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        nav { display: flex; justify-content: space-between; padding: 30px 0; border-bottom: 1px solid var(--border-light); margin-bottom: 40px; }
-        .nav-logo { font-weight: 700; font-size: 1.2rem; color: var(--text-dark); text-decoration: none; }
-        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-gray); font-size: 0.95rem; }
-        .nav-links a:hover { color: var(--text-dark); }
+        
+        /* Unified Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 1px solid var(--border-light); margin-bottom: 40px; }
+        .nav-logo { font-weight: 700; font-size: 1.2rem; color: var(--text-dark); text-decoration: none; letter-spacing: -0.5px; }
+        .nav-logo span { color: var(--accent-color); }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-gray); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent-color); }
+        .nav-links a.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 4px; }
         
         .page-header {
             padding: 50px; border-radius: 24px; background-color: #fafafc;
@@ -21,23 +33,34 @@
             background-size: 25px 25px; box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
             border: 1px solid var(--border-light); margin-bottom: 50px; text-align: center;
         }
-        .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; letter-spacing: -1px; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { border: 1px solid var(--border-light); border-radius: 12px; padding: 25px; background: var(--bg-white); }
-        .card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .card { border: 1px solid var(--border-light); border-radius: 12px; padding: 25px; background: var(--bg-white); transition: border-color 0.2s, box-shadow 0.2s; }
+        .card:hover { border-color: var(--accent-color); box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1); }
+        .card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--text-dark); }
         .card p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 15px; }
-        .tag { display: inline-block; padding: 4px 10px; background: #f3f4f6; border-radius: 15px; font-size: 0.8rem; margin-right: 5px; }
+        .tag { display: inline-block; padding: 4px 10px; background: var(--accent-light); color: var(--accent-color); border-radius: 15px; font-size: 0.8rem; font-weight: 500; margin-right: 5px; margin-bottom: 5px; }
+
+        footer { text-align: center; padding: 40px 0; color: var(--text-gray); border-top: 1px solid var(--border-light); margin-top: 50px; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Universal Navigation Bar -->
         <nav>
-            <a href="index.html" class="nav-logo">Manas Goel</a>
+            <a href="index.html" class="nav-logo">Manas <span>Goel</span></a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="academics.html">Academics</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="awards.html">Awards</a>
                 <a href="extracurricular.html">Extracurriculars</a>
+                <a href="gallery.html">Photo Gallery</a>
             </div>
         </nav>
 
@@ -72,9 +95,12 @@
             </div>
         </div>
 
-        <footer style="text-align: center; padding: 40px 0; color: var(--text-gray); border-top: 1px solid var(--border-light); margin-top: 50px;">
+        <footer>
             <p>&copy; 2026 Manas Goel.</p>
         </footer>
     </div>
 </body>
 </html>
+```eof
+
+I have successfully updated your `projects.html` file to include all navigation tabs across your portfolio!
