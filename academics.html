@@ -27,7 +27,7 @@
         .nav-links a:hover { color: var(--accent-color); }
         .nav-links a.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 4px; }
         
-        /* Dotted Page Header with Interactive Floating Constellation/Particle Mesh Background */
+        /* Dotted Page Header with Interactive DNA Helix Background */
         .page-header {
             padding: 50px; border-radius: 24px; 
             background: linear-gradient(135deg, rgba(224, 242, 254, 0.85) 0%, rgba(241, 245, 249, 0.92) 100%);
@@ -38,7 +38,7 @@
             overflow: hidden;
         }
 
-        #academics-mesh-canvas {
+        #academics-dna-canvas {
             position: absolute;
             top: 0;
             left: 0;
@@ -46,7 +46,7 @@
             height: 100%;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.5;
+            opacity: 0.45;
         }
 
         .page-header h1, .page-header p {
@@ -86,7 +86,7 @@
         </nav>
 
         <div class="page-header">
-            <canvas id="academics-mesh-canvas"></canvas>
+            <canvas id="academics-dna-canvas"></canvas>
             <h1>Academic Journey</h1>
             <p style="color: var(--text-gray);">Education and Coursework</p>
         </div>
@@ -128,7 +128,7 @@
     </div>
 
     <script>
-        const canvas = document.getElementById('academics-mesh-canvas');
+        const canvas = document.getElementById('academics-dna-canvas');
         const ctx = canvas.getContext('2d');
 
         let width, height;
@@ -140,75 +140,54 @@
         window.addEventListener('resize', resize);
         resize();
 
-        let mouseX = -1000;
-        let mouseY = -1000;
+        let mouseX = width / 2;
+        let mouseY = height / 2;
         const header = document.querySelector('.page-header');
         header.addEventListener('mousemove', (e) => {
             const rect = header.getBoundingClientRect();
             mouseX = e.clientX - rect.left;
             mouseY = e.clientY - rect.top;
         });
-        header.addEventListener('mouseleave', () => {
-            mouseX = -1000;
-            mouseY = -1000;
-        });
 
-        const particles = [];
-        const numParticles = 30;
-        for (let i = 0; i < numParticles; i++) {
-            particles.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 1,
-                vy: (Math.random() - 0.5) * 1,
-                radius: Math.random() * 2.5 + 1.5
-            });
-        }
-
+        let angle = 0;
         function animate() {
             ctx.clearRect(0, 0, width, height);
 
-            particles.forEach(p => {
-                p.x += p.vx;
-                p.y += p.vy;
+            const numNodes = 25;
+            const spacing = width / numNodes;
+            const radius = 35;
 
-                if (p.x < 0 || p.x > width) p.vx *= -1;
-                if (p.y < 0 || p.y > height) p.vy *= -1;
+            const offsetY = (mouseY - height / 2) * 0.08;
 
-                // Mouse interaction / repulsion or attraction
-                const mdx = mouseX - p.x;
-                const mdy = mouseY - p.y;
-                const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-                if (mdist < 120) {
-                    const angle = Math.atan2(mdy, mdx);
-                    p.x -= Math.cos(angle) * 1.5;
-                    p.y -= Math.sin(angle) * 1.5;
-                }
+            for (let i = 0; i < numNodes; i++) {
+                const currentAngle = angle + i * 0.3;
+                const x = i * spacing;
+                
+                const y1 = height / 2 + offsetY + Math.sin(currentAngle) * radius;
+                const y2 = height / 2 + offsetY - Math.sin(currentAngle) * radius;
 
+                // Connecting base pairs (rungs)
                 ctx.beginPath();
-                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.moveTo(x, y1);
+                ctx.lineTo(x, y2);
+                ctx.strokeStyle = i % 2 === 0 ? 'rgba(14, 165, 233, 0.4)' : 'rgba(2, 132, 199, 0.25)';
+                ctx.lineWidth = 1.8;
+                ctx.stroke();
+
+                // Strand 1 nodes
+                ctx.beginPath();
+                ctx.arc(x, y1, Math.sin(currentAngle) > 0 ? 4.5 : 2.5, 0, Math.PI * 2);
+                ctx.fillStyle = '#0ea5e9';
+                ctx.fill();
+
+                // Strand 2 nodes
+                ctx.beginPath();
+                ctx.arc(x, y2, Math.sin(currentAngle) < 0 ? 4.5 : 2.5, 0, Math.PI * 2);
                 ctx.fillStyle = '#0284c7';
                 ctx.fill();
-            });
-
-            // Connect nearby particles with lines to form an interactive academic grid mesh
-            for (let i = 0; i < numParticles; i++) {
-                for (let j = i + 1; j < numParticles; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-
-                    if (dist < 110) {
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(14, 165, 233, ${0.45 * (1 - dist / 110)})`;
-                        ctx.lineWidth = 1.2;
-                        ctx.stroke();
-                    }
-                }
             }
 
+            angle += 0.02;
             requestAnimationFrame(animate);
         }
 
