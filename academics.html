@@ -1,46 +1,68 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academics | Manas Goel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --bg-white: #ffffff; --text-dark: #111827; --text-gray: #4b5563; --border-light: #e5e7eb; }
+        :root { 
+            --bg-white: #ffffff; 
+            --text-dark: #111827; 
+            --text-gray: #4b5563; 
+            --border-light: #e5e7eb;
+            --accent-color: #4f46e5; /* Indigo Blue */
+            --accent-light: #e0e7ff;
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--bg-white); color: var(--text-dark); line-height: 1.6; }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        nav { display: flex; justify-content: space-between; padding: 30px 0; border-bottom: 1px solid var(--border-light); margin-bottom: 40px; }
-        .nav-logo { font-weight: 700; font-size: 1.2rem; color: var(--text-dark); text-decoration: none; }
-        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-gray); font-size: 0.95rem; }
-        .nav-links a:hover { color: var(--text-dark); }
         
+        /* Unified Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 1px solid var(--border-light); margin-bottom: 40px; }
+        .nav-logo { font-weight: 700; font-size: 1.2rem; color: var(--text-dark); text-decoration: none; letter-spacing: -0.5px; }
+        .nav-logo span { color: var(--accent-color); }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-gray); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent-color); }
+        .nav-links a.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 4px; }
+        
+        /* Dotted Page Header */
         .page-header {
             padding: 50px; border-radius: 24px; background-color: #fafafc;
             background-image: radial-gradient(var(--border-light) 2px, transparent 2px);
             background-size: 25px 25px; box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
             border: 1px solid var(--border-light); margin-bottom: 50px; text-align: center;
         }
-        .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; letter-spacing: -1px; }
+
         .timeline-item { padding: 25px 0; border-bottom: 1px solid var(--border-light); }
         .timeline-item:last-child { border: none; }
         .timeline-item h3 { font-size: 1.2rem; margin-bottom: 5px; }
         .timeline-item p { color: var(--text-gray); }
-        .year-tag { font-family: monospace; font-size: 0.9rem; color: #4f46e5; font-weight: bold; }
+        .year-tag { font-family: monospace; font-size: 0.9rem; color: var(--accent-color); font-weight: bold; background: var(--accent-light); padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 5px; }
+        
+        .card-link { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-block; margin-top: 8px; }
+        .card-link:hover { text-decoration: underline; }
+
+        footer { text-align: center; padding: 40px 0; color: var(--text-gray); border-top: 1px solid var(--border-light); margin-top: 50px; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Navigation -->
         <nav>
-            <a href="index.html" class="nav-logo">Manas Goel</a>
+            <a href="index.html" class="nav-logo">Manas <span>Goel</span></a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="academics.html" style="color: var(--text-dark); border-bottom: 2px solid #4f46e5; padding-bottom: 4px;">Academics</a>
+                <a href="academics.html" class="active">Academics</a>
                 <a href="projects.html">Projects</a>
                 <a href="awards.html">Awards</a>
                 <a href="extracurricular.html">Extracurriculars</a>
+                <a href="gallery.html">Photo Gallery</a>
             </div>
         </nav>
 
@@ -60,6 +82,10 @@
                 <span class="year-tag">2023 - 2025</span>
                 <h3>OP Jindal Modern School Hisar</h3>
                 <p>Class 10 Score: 98.2% | Class 9 Score: 98%.</p>
+                <div style="margin-top: 10px;">
+                    <a href="https://drive.google.com/file/d/167aFjMABoztOE7l0QFgLq8_CTdKMjoCg/view?usp=sharing" target="_blank" class="card-link" style="margin-right: 15px;">View Class 10 Marksheet &rarr;</a>
+                    <a href="https://drive.google.com/file/d/1tMi3VF0FDy3emsM1Uen_Lcpo3iIwgA94/view?usp=sharing" target="_blank" class="card-link">View Class 9 Marksheet &rarr;</a>
+                </div>
             </div>
         </section>
 
@@ -72,12 +98,13 @@
                 <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-dark);">
                     <strong>Skills Acquired:</strong> Numpy, Matplotlib, Python, Statistical Methods, and Computational Thinking.
                 </p>
+                <a href="https://drive.google.com/file/d/1nkxy8JmR6t-pP-KpuN23_4fDlMXGsXCA/view?usp=sharing" target="_blank" class="card-link">View Certificate &rarr;</a>
             </div>
         </section>
         
-        <footer style="text-align: center; padding: 40px 0; color: var(--text-gray); border-top: 1px solid var(--border-light); margin-top: 50px;">
+        <footer>
             <p>&copy; 2026 Manas Goel.</p>
         </footer>
     </div>
 </body>
-</html> 
+</html>
