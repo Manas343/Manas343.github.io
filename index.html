@@ -7,12 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-white: #ffffff;
-            --text-dark: #111827;
-            --text-gray: #4b5563;
-            --border-light: #e5e7eb;
-            --accent-color: #4f46e5;
-            --accent-light: #e0e7ff;
+            --bg-white: #f8fafc;
+            --text-dark: #0f172a;
+            --text-gray: #475569;
+            --border-light: #cbd5e1;
+            --accent-color: #0ea5e9; /* Sleek Ocean Teal / Cyan Accent */
+            --accent-light: #bae6fd;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,7 +44,7 @@
             border-bottom: 1px solid var(--border-light);
             flex-wrap: wrap;
             gap: 15px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(248, 250, 252, 0.9);
             backdrop-filter: blur(8px);
             position: sticky;
             top: 0;
@@ -57,7 +57,7 @@
         .nav-links a:hover { color: var(--accent-color); }
         .nav-links a.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 4px; }
 
-        /* Hero Layout with Prominent DNA Background */
+        /* Hero Layout with Interactive Neural Current Canvas Background */
         .hero {
             display: flex;
             align-items: center;
@@ -65,25 +65,26 @@
             margin-bottom: 80px;
             padding: 50px;
             border-radius: 24px;
-            background: linear-gradient(135deg, rgba(240, 243, 255, 0.85) 0%, rgba(250, 250, 252, 0.92) 100%);
+            background: linear-gradient(135deg, rgba(224, 242, 254, 0.85) 0%, rgba(241, 245, 249, 0.92) 100%);
             backdrop-filter: blur(6px);
-            box-shadow: 0 15px 35px -5px rgba(79, 70, 229, 0.08);
-            border: 1px solid rgba(79, 70, 229, 0.15);
+            box-shadow: 0 15px 35px -5px rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.2);
             position: relative;
             overflow: hidden;
         }
 
-        /* Prominent DNA Canvas inside Hero Section */
-        #hero-dna-canvas {
+        /* Dual Neural Current Canvas Backgrounds */
+        #neural-canvas-left, #neural-canvas-right {
             position: absolute;
             top: 0;
-            right: 0;
-            width: 50%;
+            width: 35%;
             height: 100%;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.55;
+            opacity: 0.5;
         }
+        #neural-canvas-left { left: 0; }
+        #neural-canvas-right { right: 0; }
         
         .hero-img {
             width: 220px;
@@ -92,7 +93,7 @@
             object-fit: cover;
             object-position: 50% 20%;
             border: 4px solid var(--accent-light);
-            background-color: #f3f4f6;
+            background-color: #e2e8f0;
             flex-shrink: 0;
             position: relative;
             z-index: 1;
@@ -140,7 +141,7 @@
             padding: 25px; 
             transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
         }
-        .card:hover { border-color: var(--accent-color); box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1); transform: translateY(-3px); }
+        .card:hover { border-color: var(--accent-color); box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.15); transform: translateY(-3px); }
         .card h4 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-dark); }
         .card p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px; }
         .card-link { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
@@ -151,7 +152,7 @@
 
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; gap: 30px; padding: 30px 20px; }
-            #hero-dna-canvas { width: 100%; height: 50%; top: 50%; }
+            #neural-canvas-left, #neural-canvas-right { width: 50%; }
             nav { flex-direction: column; align-items: flex-start; }
             .nav-links { width: 100%; justify-content: space-between; }
         }
@@ -173,9 +174,10 @@
             </div>
         </nav>
 
-        <!-- Profile Section with Prominent DNA Helix Background -->
+        <!-- Profile Section with Interactive Neural Current Animation Background -->
         <section class="hero">
-            <canvas id="hero-dna-canvas"></canvas>
+            <canvas id="neural-canvas-left"></canvas>
+            <canvas id="neural-canvas-right"></canvas>
             <img src="manas pic1.jpg" alt="Manas Goel" class="hero-img">
             
             <div class="hero-content">
@@ -183,7 +185,7 @@
                 <h2>Bioengineering & Physics</h2>
                 <p>My academic journey is driven by a desire to realize the intersection of biological potential and technological innovation. Dedicated to solving societal problems via technology.</p>
                 <a href="manas resume_2.pdf" download class="btn">Download Resume (PDF)</a>
-                <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-gray);">manasgoel2009@gmail.com | +91-7206150310[cite: 6]</p>
+                <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-gray);">manasgoel2009@gmail.com | +91-7206150310</p>
             </div>
         </section>
 
@@ -194,19 +196,19 @@
                 
                 <div class="card">
                     <h4>Research & Projects</h4>
-                    <p>View my work on fMRI Cognitive Distraction analysis, EEG Signal Processing, ISAAP Seed Sowing Robot, and Cerebral Palsy mobile games[cite: 6].</p>
+                    <p>View my work on fMRI Cognitive Distraction analysis, EEG Signal Processing, ISAAP Seed Sowing Robot, and Cerebral Palsy mobile games.</p>
                     <a href="projects.html" class="card-link">View Projects &rarr;</a>
                 </div>
 
                 <div class="card">
                     <h4>Olympiads & Awards</h4>
-                    <p>Details on my Gold Medal at the IJSO Romania, Bronze at the Asian Physics Olympiad, USMDO Gold, and national recognitions[cite: 6].</p>
+                    <p>Details on my Gold Medal at the IJSO Romania, Bronze at the Asian Physics Olympiad, USMDO Gold, and national recognitions.</p>
                     <a href="awards.html" class="card-link">View Awards &rarr;</a>
                 </div>
 
                 <div class="card">
                     <h4>Beyond the Classroom</h4>
-                    <p>Learn more about my classical violin training, debate achievements, basketball, and voluntary work in prosthetics[cite: 6].</p>
+                    <p>Learn more about my classical violin training, debate achievements, basketball, and voluntary work in prosthetics.</p>
                     <a href="extracurricular.html" class="card-link">View Extracurriculars &rarr;</a>
                 </div>
 
@@ -219,72 +221,110 @@
         </footer>
     </div>
 
-    <!-- Interactive DNA Helix Animation Script for the Hero Section -->
+    <!-- Interactive Neural Current / Synaptic Pulse Animation Script -->
     <script>
-        const canvas = document.getElementById('hero-dna-canvas');
-        const ctx = canvas.getContext('2d');
+        function initNeuralCanvas(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
 
-        let width, height;
-        function resize() {
-            const rect = canvas.parentElement.getBoundingClientRect();
-            width = canvas.width = rect.width;
-            height = canvas.height = rect.height;
-        }
-        window.addEventListener('resize', resize);
-        resize();
+            let width, height;
+            function resize() {
+                const rect = canvas.parentElement.getBoundingClientRect();
+                width = canvas.width = rect.width * 0.35;
+                height = canvas.height = rect.height;
+            }
+            window.addEventListener('resize', resize);
+            resize();
 
-        let mouseX = width / 2;
-        let mouseY = height / 2;
-        const heroSection = document.querySelector('.hero');
-        heroSection.addEventListener('mousemove', (e) => {
-            const rect = heroSection.getBoundingClientRect();
-            mouseX = e.clientX - rect.left;
-            mouseY = e.clientY - rect.top;
-        });
-
-        let angle = 0;
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-
-            const numNodes = 25;
-            const spacing = height / numNodes;
-            const radius = 50;
-
-            const offsetX = (mouseX - width / 2) * 0.08;
-
+            // Generate neural nodes simulating a neural network / brain pathway mesh
+            const nodes = [];
+            const numNodes = 18;
             for (let i = 0; i < numNodes; i++) {
-                const currentAngle = angle + i * 0.3;
-                const y = i * spacing;
-                
-                const x1 = width * 0.65 + offsetX + Math.sin(currentAngle) * radius;
-                const x2 = width * 0.65 + offsetX - Math.sin(currentAngle) * radius;
-
-                // Draw connecting base pairs (rungs) with higher opacity & prominence
-                ctx.beginPath();
-                ctx.moveTo(x1, y);
-                ctx.lineTo(x2, y);
-                ctx.strokeStyle = i % 2 === 0 ? 'rgba(79, 70, 229, 0.35)' : 'rgba(99, 102, 241, 0.25)';
-                ctx.lineWidth = 2;
-                ctx.stroke();
-
-                // Draw strand 1 nodes
-                ctx.beginPath();
-                ctx.arc(x1, y, Math.sin(currentAngle) > 0 ? 5 : 3, 0, Math.PI * 2);
-                ctx.fillStyle = '#4f46e5';
-                ctx.fill();
-
-                // Draw strand 2 nodes
-                ctx.beginPath();
-                ctx.arc(x2, y, Math.sin(currentAngle) < 0 ? 5 : 3, 0, Math.PI * 2);
-                ctx.fillStyle = '#6366f1';
-                ctx.fill();
+                nodes.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.6,
+                    vy: (Math.random() - 0.5) * 0.6,
+                    radius: Math.random() * 2 + 1.5
+                });
             }
 
-            angle += 0.02;
-            requestAnimationFrame(animate);
+            // Pulses traveling along connections to show electric current flow
+            const pulses = [];
+            for (let i = 0; i < 6; i++) {
+                pulses.push({
+                    from: Math.floor(Math.random() * numNodes),
+                    to: Math.floor(Math.random() * numNodes),
+                    progress: Math.random()
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Update and draw nodes
+                nodes.forEach(node => {
+                    node.x += node.vx;
+                    node.y += node.vy;
+
+                    if (node.x < 0 || node.x > width) node.vx *= -1;
+                    if (node.y < 0 || node.y > height) node.vy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = '#0284c7';
+                    ctx.fill();
+                });
+
+                // Draw connections (synaptic grid)
+                for (let i = 0; i < numNodes; i++) {
+                    for (let j = i + 1; j < numNodes; j++) {
+                        const dx = nodes[i].x - nodes[j].x;
+                        const dy = nodes[i].y - nodes[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 90) {
+                            ctx.beginPath();
+                            ctx.moveTo(nodes[i].x, nodes[i].y);
+                            ctx.lineTo(nodes[j].x, nodes[j].y);
+                            ctx.strokeStyle = `rgba(14, 165, 233, ${1 - dist / 90})`;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                // Animate electric current pulses traveling across connections
+                pulses.forEach(pulse => {
+                    pulse.progress += 0.015;
+                    if (pulse.progress >= 1) {
+                        pulse.progress = 0;
+                        pulse.from = pulse.to;
+                        pulse.to = Math.floor(Math.random() * numNodes);
+                    }
+
+                    const n1 = nodes[pulse.from];
+                    const n2 = nodes[pulse.to];
+                    const px = n1.x + (n2.x - n1.x) * pulse.progress;
+                    const py = n1.y + (n2.y - n1.y) * pulse.progress;
+
+                    ctx.beginPath();
+                    ctx.arc(px, py, 3, 0, Math.PI * 2);
+                    ctx.fillStyle = '#38bdf8';
+                    ctx.shadowColor = '#0ea5e9';
+                    ctx.shadowBlur = 8;
+                    ctx.fill();
+                    ctx.shadowBlur = 0; // reset shadow
+                });
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
         }
 
-        animate();
+        initNeuralCanvas('neural-canvas-left');
+        initNeuralCanvas('neural-canvas-right');
     </script>
 </body>
 </html>
