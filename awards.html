@@ -27,7 +27,7 @@
         .nav-links a:hover { color: var(--accent-color); }
         .nav-links a.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 4px; }
         
-        /* Page Header with Floating 3D Shapes Background */
+        /* Page Header with Interactive Ripple Effect Background */
         .page-header {
             padding: 50px; border-radius: 24px; 
             background: linear-gradient(135deg, rgba(224, 242, 254, 0.85) 0%, rgba(241, 245, 249, 0.92) 100%);
@@ -36,9 +36,10 @@
             margin-bottom: 50px; text-align: center;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
-        #awards-shapes-canvas {
+        #awards-ripple-canvas {
             position: absolute;
             top: 0;
             left: 0;
@@ -46,12 +47,12 @@
             height: 100%;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.4;
         }
 
         .page-header h1, .page-header p {
             position: relative;
             z-index: 1;
+            pointer-events: none;
         }
         .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; letter-spacing: -1px; color: var(--text-dark); }
         
@@ -162,10 +163,10 @@
             </div>
         </nav>
 
-        <div class="page-header">
-            <canvas id="awards-shapes-canvas"></canvas>
+        <div class="page-header" id="header-card">
+            <canvas id="awards-ripple-canvas"></canvas>
             <h1>Awards & Honors</h1>
-            <p style="color: var(--text-gray);">Olympiads, Competitions, and Recognitions</p>
+            <p style="color: var(--text-gray);">Olympiads, Competitions, and Recognitions (Click anywhere for ripples)</p>
         </div>
 
         <section>
@@ -524,9 +525,9 @@
         <img class="modal-content" id="expandedImg">
     </div>
 
-    <!-- Floating 3D Shapes Background Animation Script -->
+    <!-- Interactive Ripple Effect Background Script -->
     <script>
-        const canvas = document.getElementById('awards-shapes-canvas');
+        const canvas = document.getElementById('awards-ripple-canvas');
         const ctx = canvas.getContext('2d');
 
         let width, height;
@@ -538,74 +539,52 @@
         window.addEventListener('resize', resize);
         resize();
 
-        let mouseX = width / 2;
-        let mouseY = height / 2;
-        const header = document.querySelector('.page-header');
-        header.addEventListener('mousemove', (e) => {
-            const rect = header.getBoundingClientRect();
-            mouseX = e.clientX - rect.left;
-            mouseY = e.clientY - rect.top;
+        const ripples = [];
+
+        const headerCard = document.getElementById('header-card');
+        headerCard.addEventListener('click', (e) => {
+            const rect = headerCard.getBoundingClientRect();
+            ripples.push({
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top,
+                radius: 0,
+                maxRadius: Math.max(width, height) * 0.7,
+                opacity: 0.6
+            });
         });
 
-        const shapes = [];
-        for (let i = 0; i < 15; i++) {
-            shapes.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                size: Math.random() * 20 + 10,
-                speedX: (Math.random() - 0.5) * 0.6,
-                speedY: (Math.random() - 0.5) * 0.6,
-                angle: Math.random() * Math.PI * 2,
-                rotSpeed: (Math.random() - 0.5) * 0.02,
-                type: i % 3 // 0: cube, 1: pyramid/triangle, 2: circle/sphere
-            });
-        }
+        // Add ambient background ripple periodically
+        setInterval(() => {
+            if (ripples.length < 3) {
+                ripples.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: 0,
+                    maxRadius: Math.random() * 150 + 100,
+                    opacity: 0.3
+                });
+            }
+        }, 2000);
 
         function animate() {
             ctx.clearRect(0, 0, width, height);
 
-            shapes.forEach(s => {
-                s.x += s.speedX + (mouseX - width / 2) * 0.0005;
-                s.y += s.speedY + (mouseY - height / 2) * 0.0005;
-                s.angle += s.rotSpeed;
+            for (let i = ripples.length - 1; i >= 0; i--) {
+                const r = ripples[i];
+                r.radius += 1.5;
+                r.opacity = 0.6 * (1 - r.radius / r.maxRadius);
 
-                if (s.x < -50) s.x = width + 50;
-                if (s.x > width + 50) s.x = -50;
-                if (s.y < -50) s.y = height + 50;
-                if (s.y > height + 50) s.y = -50;
-
-                ctx.save();
-                ctx.translate(s.x, s.y);
-                ctx.rotate(s.angle);
-
-                ctx.strokeStyle = 'rgba(14, 165, 233, 0.35)';
-                ctx.fillStyle = 'rgba(14, 165, 233, 0.08)';
-                ctx.lineWidth = 1.5;
-
-                if (s.type === 0) {
-                    // Cube-like box
-                    const sz = s.size;
-                    ctx.strokeRect(-sz/2, -sz/2, sz, sz);
-                    ctx.fillRect(-sz/2, -sz/2, sz, sz);
-                } else if (s.type === 1) {
-                    // Triangle / Pyramid
-                    ctx.beginPath();
-                    ctx.moveTo(0, -s.size/2);
-                    ctx.lineTo(s.size/2, s.size/2);
-                    ctx.lineTo(-s.size/2, s.size/2);
-                    ctx.closePath();
-                    ctx.stroke();
-                    ctx.fill();
-                } else {
-                    // Ring / Sphere
-                    ctx.beginPath();
-                    ctx.arc(0, 0, s.size/2, 0, Math.PI * 2);
-                    ctx.stroke();
-                    ctx.fill();
+                if (r.radius >= r.maxRadius || r.opacity <= 0) {
+                    ripples.splice(i, 1);
+                    continue;
                 }
 
-                ctx.restore();
-            });
+                ctx.beginPath();
+                ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(14, 165, 233, ${r.opacity})`;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
 
             requestAnimationFrame(animate);
         }
